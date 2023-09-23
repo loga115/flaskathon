@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Lawscribe</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Lawscribe Frontend</h1>
+    </header>
+    <main>
+        <section>
+            <h2>About Us</h2>
+            <p>Simplify the process of writing legally binding documents by only providing information. </p>
+        </section>
+        
+        <!-- Multiple textboxes for user input -->
+        <section>
+            <h2>Provide your Details:</h2>
+            <form action="/submit" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    <section id="result">
+        <h2>Form information: </h2>
+        <pre id="json-result"style="font-family: 'Comic Sans MS'"> </pre>
+    </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 Joby Production</p>
+    </footer> 
+</body>
+
+<script>
+    function displayString() {
+        fetch('/submit', {
+            method: 'POST',
+            body: new FormData(document.querySelector('form')),
+        })
+        .then(response => response.text())
+        .then(data => {
+            const jsonResult = document.getElementById('json-result');
+            jsonResult.textContent = data;
+        });
+    }
+
+    document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        displayString();
+    });
+</script>
+
+</html>

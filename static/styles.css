@@ -1,0 +1,44 @@
+/* static/styles.css */
+body {
+    font-family: 'Comic Sans MS';
+    margin: 0;
+    padding: 0;
+    background-color: #fa7b7b;
+}
+
+header {
+    background-color: #f7a7a7;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    color: #fff;
+}
+
+main {  
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5bfbf;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f7a7a7;
+    color: #fff;
+}
+
+#json-result {
+        font-family: 'Comic Sans MS', cursive;
+        background-color: #fff;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100;
+        white-space: initial;
+    }
